@@ -1,0 +1,6 @@
+{
+    "require": {
+        "hilmanrdn/pirlo-db": " dev-master",
+        "facebook/graph-sdk": "^5.7"
+    }
+}
