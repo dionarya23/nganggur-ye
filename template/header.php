@@ -43,11 +43,19 @@ $_SESSION['oauth2state'] = $provider->getState();
     </div>
 
     <div class="navbar-end">
+    <a class="navbar-item" href="index.php">
+      Beranda
+    </a>
     <a class="navbar-item">
         Tentang Kita
       </a>
       <div class="navbar-item">
 
+      <?php if ($_SESSION['user']['type_user'] == 'hrd') { ?>
+        <a href="<?= BASEPATH ?>/posting_kerjaan.php" class="navbar-item">
+            Posting Kerjaan
+          </a>
+      <?php } ?>
       <?php 
           if (isset($_SESSION['user'])){ ?>
         <div class="buttons">

@@ -26,7 +26,7 @@ require './config/bootstrap.php';
                 'email'         => $userFb->getEmail(),
                 'jenis_kelamin' => '',
                 'foto'          => $picture['secure_url'],
-                'type_user'     => 'hrd'
+                'type_user'     => ''
             ]);
 
             $_SESSION['user'] = array(
@@ -34,7 +34,7 @@ require './config/bootstrap.php';
                 "fb_id" => $userFb->getId(),
             );
             header("Location: lengkapi-profile.php");
-        } else if ($isUserExist->jenis_kelamin == '' || $isUserExist->type_user == 'hrd') {
+        } else if ($isUserExist->jenis_kelamin == '' || $isUserExist->type_user == '') {
             $_SESSION['user'] = array(
                 "nama_user" => $userFb->getName(),
                 "fb_id" => $userFb->getId(),
@@ -43,6 +43,7 @@ require './config/bootstrap.php';
             header("Location: lengkapi-profile.php");
         }   else {
             $_SESSION['user'] = array(
+                'id_user' => $isUserExist->id_user,
                 "nama_user" => $userFb->getName(),
                 "fb_id" => $userFb->getId(),
                 "type_user" => $isUserExist->type_user

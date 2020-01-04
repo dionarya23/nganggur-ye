@@ -1,6 +1,5 @@
 <?php 
 require_once 'vendor/autoload.php';
-
 session_start();
 
 $provider = new \League\OAuth2\Client\Provider\Facebook([

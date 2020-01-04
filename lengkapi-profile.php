@@ -5,6 +5,7 @@ require './config/bootstrap.php';
 if (isset($_SESSION['user']['type_user'])) {
     header('Location: index.php');
 } else if (isset($_POST['kirim'])) {
+   $user = User::where('fb_id', $_SESSION['user']['fb_id']);
     User::where('fb_id', $_SESSION['user']['fb_id'])->update([
         'jenis_kelamin' => $_POST['jenis_kelamin'],
         'type_user' => $_POST['type_user']
@@ -13,7 +14,8 @@ if (isset($_SESSION['user']['type_user'])) {
     $_SESSION['user'] = array(
         "nama_user" => $_SESSION['user']['nama_user'],
         "fb_id"     => $_SESSION['user']['fb_id'],
-        "type_user" => $_POST['type_user']
+        "type_user" => $_POST['type_user'],
+        "id_user"   => $user->id_user
     );
 
     header("Location: index.php");

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit8b2377b311334a564dc83f9bc19d26fc
+class ComposerStaticInit3a775ac31b04dd67cd8af4e12f97096f
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
@@ -150,15 +150,16 @@ class ComposerStaticInit8b2377b311334a564dc83f9bc19d26fc
         'Cloudinary\\SignatureVerifier' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/SignatureVerifier.php',
         'Cloudinary\\Uploader' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Uploader.php',
         'Cloudinary\\Utils\\Singleton' => __DIR__ . '/..' . '/cloudinary/cloudinary_php/src/Utils/Singleton.php',
+        'Posting' => __DIR__ . '/../..' . '/classes/Posting.php',
         'User' => __DIR__ . '/../..' . '/classes/User.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit8b2377b311334a564dc83f9bc19d26fc::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit8b2377b311334a564dc83f9bc19d26fc::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit8b2377b311334a564dc83f9bc19d26fc::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit3a775ac31b04dd67cd8af4e12f97096f::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit3a775ac31b04dd67cd8af4e12f97096f::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit3a775ac31b04dd67cd8af4e12f97096f::$classMap;
 
         }, null, ClassLoader::class);
     }
